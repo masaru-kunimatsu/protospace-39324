@@ -1,10 +1,4 @@
 class PrototypesController < ApplicationController
-<<<<<<< Updated upstream
-  def index 
-  end
-end
-=======
-
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
@@ -30,7 +24,7 @@ end
       render :new
     end
   end
-
+  
   def edit
     @prototype = Prototype.find(params[:id])
     unless current_user.id == @prototype.user.id
@@ -53,11 +47,8 @@ end
     prototype.destroy
     redirect_to root_path
   end
-
   private
 
   def prototype_params
     params.require(:prototype).permit(:title, :catch_copy, :concept, :image).merge(user_id: current_user.id)
   end
-end
->>>>>>> Stashed changes

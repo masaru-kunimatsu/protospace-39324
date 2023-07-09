@@ -1,5 +1,6 @@
 <main class="main">
   <div class="inner">
+<<<<<<< Updated upstream
     <%# ログインしているときは以下を表示する %>
       <%# <div class="greeting"> %>
         <%# こんにちは、 %>
@@ -9,5 +10,15 @@
     <div class="card__wrapper">
       <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
     </div>
+=======
+    <% if user_signed_in? %>
+      <div class="greeting">
+        こんにちは、<%= link_to "#{current_user.name}さん", user_path(current_user.id), class: :greeting__link %>
+      </div>
+    <% end %>
+      <div class="card__wrapper">
+        <%= render partial: "prototype",locals: { prototype: @prototype } , collection: @prototype%>
+      </div>
+>>>>>>> Stashed changes
   </div>
 </main>

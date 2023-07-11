@@ -4,6 +4,8 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     if @comment.save
       redirect_to prototype_path(@comment.prototype) 
+    else
+      redirect_to prototype_path(@comment.prototype) 
     end
   end
 

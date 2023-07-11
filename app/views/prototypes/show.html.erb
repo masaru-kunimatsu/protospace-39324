@@ -29,7 +29,7 @@
         </div>
       </div>
       <div class="prototype__comments">
-        <% if user_signed_in? && current_user.id == @prototype.user_id %>
+        <% if user_signed_in? %>
           <%= form_with(model: [@prototype, @comment], url: prototype_comments_path(@prototype.id), local: true) do |form| %>
             <div class="field">
               <%= form.label :content, "コメント" %><br />

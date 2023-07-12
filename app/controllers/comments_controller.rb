@@ -10,7 +10,8 @@ class CommentsController < ApplicationController
   end
 
   def show
-    @comment
+    @comment = Comment.new
+    @comments = @prototype.comments
   end
 
   private

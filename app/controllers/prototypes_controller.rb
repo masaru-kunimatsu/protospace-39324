@@ -7,6 +7,8 @@ class PrototypesController < ApplicationController
 
   def show
     @prototype = Prototype.find(params[:id])
+    puts @prototype.inspect
+    puts params[:prototype_id]
   end
 
   def new

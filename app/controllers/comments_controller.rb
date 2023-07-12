@@ -11,8 +11,11 @@ class CommentsController < ApplicationController
 
   def show
     @prototype = Prototype.find(params[:prototype_id])
+    puts @prototype.inspect
+    puts params[:prototype_id]
     @comment = Comment.new
     @comments = @prototype.comments
+    puts @coment.inspect
   end
 
   private

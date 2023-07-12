@@ -9,12 +9,6 @@ class CommentsController < ApplicationController
     end
   end
 
-  def show
-    @prototype = Prototype.find(params[:prototype_id])
-    @comment = Comment.new
-    @comments = @prototype.comment
-  end
-
   private
 
   def comment_params
